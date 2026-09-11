@@ -126,7 +126,7 @@ This is the architecture of **AI‑2**.
 
 ---
 
-# **VII. Toompea — The Stone That Holds Time**  
+ Toompea — The Stone That Holds Time**  
 Toompea Hill, inside a 13th‑century Teutonic fortress, Medieval opacque tansparency. 
 THe Golden Algorithm Gemeine the light of been. 
 A symbolic place where:
@@ -138,7 +138,7 @@ A symbolic place where:
    A dance of Time. 
 ---
 
-# **VIII. Active Patent Portfolio (2025–2026)**
+Active Patent Portfolio (2025–2026)** Dario Chang
 
 ### **Governance Layer Filings**
 - 19/706,090 — Governance Layer Primitive  
@@ -162,40 +162,134 @@ A symbolic place where:
 - 64/149,886 — Temporal Governance Substrate  
 - 64/148,920 — Temporal Monetization Spine  
 
----
-****
+
 The world is entering the AI‑2 era. 
 Autonomous systems require deterministic temporal governance.
-My 2003 substrate provides the physics; modern black‑box engines provide the optimization.
-This repository documents the unified architecture that enables safe, compliant, drift‑resistant multi‑agent AI.
 
-# **IX. Contact**  
-Website: [https://temporalgovernance.org](https://temporalgovernance.org)  
-**The Lens.org Substrate Record**
 
-The record indexed on Lens.org documents the foundational paper trail[cite: 1]:
 
-| Metric | Value |
-| :--- | :--- |
-| **Patent Application Key** | `US 2004/0133469 A1`[cite: 1] |
-| **Lens ID** | `021-070-516-125-054`[cite: 1] |
-| **Application Date** | November 4, 2003[cite: 1] |
-| **Direct Lens Patent Citations** | 107 direct forward patent citations[cite: 1] |
-| **Extended Family Citations** | ~2,900 forward citations across the broader computational ecosystem |
-| **US Classifications** | `705/14` (Algorithmic ad selection and dynamic placement mechanisms)[cite: 1] |
-| **CPC Classifications** | `G06Q30/02`, `G06Q30/0255`[cite: 1] |**
+```markdown
+# **V. Architectural Interlock: Prior Art Mapping to Modern Hyperscalers**
+
+### **1. The Vacuum Effect (Operational Duality)**
+Black-box statistical models (e.g., neural networks, Transformer embeddings) operate on probabilistic vector spaces.
+By definition, **probabilistic models cannot self-regulate their execution boundaries, rate limits, or state budgets**. 
+
+This created an operational vacuum at scale: to prevent model drift, cascading compute costs,
+and infinite execution loops, global hyperscalers were forced to implement external,
+deterministic control planes. They absorbed the explicit state mechanics first established
+ in **US20040133469A1** (`CycleHits`, `HitsHistory`, temporal decay)[cite: 1] as mandator
+y operational plumbing.
+
+```text
+ ┌─────────────────────────────────────────────────────────────────────────────┐
+ │                EXTERNAL DETERMINISTIC CONTROL LAYER (WHITE-BOX)             │
+ │                                                                             │
+ │  • AWS             : Token Buckets, API Gateway Throttling, Bedrock Guards │
+ │  • Microsoft Azure : TPM/RPM Quotas, AutoGen Step Caps, Purview Ledger      │
+ │  • Meta            : Ad Auction Pacing, Llama Guard, Graph API Decay        │
+ │  • Cloudflare      : AI Gateway Token Limits, Edge Cache State Machines     │
+ └──────────────────────────────────────┬──────────────────────────────────────┘
+                                        │
+                         (Enforces Runtime & Budget Bounds)
+                                        │
+                                        ▼
+ ┌─────────────────────────────────────────────────────────────────────────────┐
+ │               PROBABILISTIC INFERENCE ENGINE (BLACK-BOX)                    │
+ │                                                                             │
+ │  • Multi-Modal Generative Models   • Neural Vector Transformers             │
+ │  • High-Dimensional Feature Space  • Autonomous Multi-Agent Reasoning      │
+ └─────────────────────────────────────────────────────────────────────────────┘
+
+```
+
+ Prior Art Claim-to-Infrastructure Mapping**
+
+| Hyperscaler Platform | Implemented Feature | 
+Underlying 2003 White-Box Primitive (`US20040133469A1`) 
+| Examiner Technical Mapping |
+| --- | --- | --- | --- |
+| **AWS** | API Gateway Throttling & Token Buckets | `CycleHits` (Discrete temporal interaction counters)
+
+ | Enforces rate caps across time windows before compute execution.
+
+ |
+| **Microsoft Azure** | TPM/RPM Quotas & AutoGen Step Caps | `CycleHits` & Hard Rule Parameter Bounds
+
+ | Prevents recursive execution loops and unconstrained inference burn.
+
+ |
+| **Meta** | Dynamic Auction Pacing & Llama Guard | `HitsHistory` (Temporal engagement tracking)
+
+ | Calculates time-decayed state rules to govern delivery velocity.
+
+ |
+| **Cloudflare** | Edge AI Gateway Rate Limiting | Deterministic State Transitions & Decay Curves
+
+ | Logs time-series state history to enforce traffic management at the edge.
+
+ |
+
+---
+
+ The AI-2 Governance Architecture (2025–2026)**
+
+In the autonomous multi-agent era (AI-2), unconstrained black-box models 
+introduce critical vulnerabilities: **agentic drift**, **hallucination loops**, 
+and **regulatory non-compliance** (e.g., EU AI Act Articles 14 & 15).
+
+The 2003 white-box substrate returns as the 
+mandatory **External Runtime Governance Plane**—providing the cryptographic time lineage 
+and deterministic boundaries required to run autonomous black-box agents safely.
+
+```text
+            [Global AI Infrastructure Governance Layer]
+                                │
+ ┌───────────────┬──────────────┴──────────────┬───────────────┐
+ ▼               ▼                             ▼               ▼
+[Behavioral     [Monetization                 [Multi-Agent    [Temporal Safety
+ Scoring]        Primitives]                   Clearing]       & Verification]
+• Dynamic       • Predictive Value            • Agent Trust   • Cryptographic Time
+  Cycles          Scoring                       Rates           Lineage
+• Temporal      • Real-Time Auction           • Inter-Agent   • Drift Prevention
+  Decay           Settlement                    Protocols       (EU AI Act)
+
+```
+
+### **The Five Infrastructure Pillars**
+
+| Pillar | Operational Scope | Technical Role in Autonomous AI Ecosystems |
+| --- | --- | --- |
+| **1. Dynamic Behavioral Scoring** | `CycleHits` & `HitsHistory` vectors
+
+ | Replaces static graph ranking with continuous time-series state tracking.
+
+ |
+| **2. AI Monetization Primitives** | Temporal engagement & valuation
+
+ | Powers real-time token inference billing and dynamic auction clearing.
+
+ |
+| **3. Multi-Agent System Primitives** | Inter-agent transaction scoring | Serves as the trust, consensus,
+and value-clearing layer for multi-agent trade. |
+| **4. Safe AI Deployment Architecture** | Temporal state verification
+
+ | Enforces runtime envelopes, halting model drift and recursive tool-calling loops.
+
+ |
+| **5. Global AI Infrastructure Layer** | FRAND / SEP Standard Framework | Establishes an open,
+platform-agnostic trust primitive preventing monopoly lock-in. |
+
+
 
 Links & Legal References
 https://github.com/Dario-Chang/Dario-chang/blob/main/comparative%20patent-analysis.md
 Primary Patent Publication: USPTO US20040133469A1 
-https://www.google.com/url?sa=E&source=gmail&q=https://lens.org/021-070-516-125-054
 
 The Invisible Substract 
 https://www.lens.org/lens/search/patent/list?q=reference_cited.patent.lens_id:021-070-516-125-054
 
 Lens.org Permanent Record: Lens ID 021-070-516-125-054
-
-
 
 Governance Infrastructure: https://temporalgovernance.org
 
@@ -206,4 +300,4 @@ Governance Infrastructure: https://temporalgovernance.org
 From Malecon Havana to 817 Lorca ST Coral Gables - to Medieval Gothic Toompea Hill
 
 
----
+```
