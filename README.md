@@ -1,6 +1,7 @@
-### **DARIO CHANG — TEMPORAL GOVERNANCE ARCHITECT**  
-Originator of the 2003 White‑Box Temporal Substrate (US20040133469)  
-Architect of unified governance layers for autonomous multi‑agent systems (AI‑2 Era)
+                              ### **DARIO CHANG — TEMPORAL GOVERNANCE ARCHITECT**  
+
+                         Originator of the 2003 White‑Box Temporal Substrate (US20040133469)  
+                 Architect of unified governance layers for autonomous multi‑agent systems (AI‑2 Era)
 
 ---
 
@@ -170,6 +171,8 @@ This repository documents the unified architecture that enables safe, compliant,
 
 # **IX. Contact**  
 Website: [https://temporalgovernance.org](https://temporalgovernance.org)  
+
+<img width="960" height="363" alt="image" src="https://github.com/user-attachments/assets/99222b4c-609f-475c-bc50-fb1ccd5952ba" />
 
 © 2026 Dario Chang — Temporal Governance Architect
 
