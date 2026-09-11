@@ -171,6 +171,33 @@ This repository documents the unified architecture that enables safe, compliant,
 
 # **IX. Contact**  
 Website: [https://temporalgovernance.org](https://temporalgovernance.org)  
+**The Lens.org Substrate Record**
+
+The record indexed on Lens.org documents the foundational paper trail[cite: 1]:
+
+| Metric | Value |
+| :--- | :--- |
+| **Patent Application Key** | `US 2004/0133469 A1`[cite: 1] |
+| **Lens ID** | `021-070-516-125-054`[cite: 1] |
+| **Application Date** | November 4, 2003[cite: 1] |
+| **Direct Lens Patent Citations** | 107 direct forward patent citations[cite: 1] |
+| **Extended Family Citations** | ~2,900 forward citations across the broader computational ecosystem |
+| **US Classifications** | `705/14` (Algorithmic ad selection and dynamic placement mechanisms)[cite: 1] |
+| **CPC Classifications** | `G06Q30/02`, `G06Q30/0255`[cite: 1] |**
+
+Links & Legal References
+
+Primary Patent Publication: USPTO US20040133469A1 
+https://www.google.com/url?sa=E&source=gmail&q=https://lens.org/021-070-516-125-054
+
+The Invisible Substract 
+https://www.lens.org/lens/search/patent/list?q=reference_cited.patent.lens_id:021-070-516-125-054
+
+Lens.org Permanent Record: Lens ID 021-070-516-125-054
+
+
+
+Governance Infrastructure: https://temporalgovernance.org
 
 <img width="960" height="363" alt="image" src="https://github.com/user-attachments/assets/99222b4c-609f-475c-bc50-fb1ccd5952ba" />
 
