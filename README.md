@@ -163,7 +163,5 @@ A symbolic place where:
 
 # **IX. Contact**  
 Website: [https://temporalgovernance.org](https://temporalgovernance.org)  
-LinkedIn: Dario Chang  
-Location: Toompea Hill, Tallinn, Estonia
-
+From 817 Lorca ST Coral Gables - to Medieval Gothic Toompea Hill
 ---
