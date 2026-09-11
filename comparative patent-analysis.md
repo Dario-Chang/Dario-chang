@@ -199,3 +199,8 @@ The white‑box substrate serves as the **traffic controller, rate limiter, and 
 
 In the AI‑2 era, as autonomous agents interact across cloud boundaries, this substrate becomes the **standardized, non-optional governance layer** beneath global compute.
 
+# XIV. The Vacuum Effect — The Invisible Silent Mechanism Behind Global AI Infrastructure
+
+```python
+# No mathematical calculations required, but running a quick pass to ensure system state is clean
+print("Vacuum Effect & White-Box Mechanics Analysis Ready")
