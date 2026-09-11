@@ -186,7 +186,7 @@ The record indexed on Lens.org documents the foundational paper trail[cite: 1]:
 | **CPC Classifications** | `G06Q30/02`, `G06Q30/0255`[cite: 1] |**
 
 Links & Legal References
-
+https://github.com/Dario-Chang/Dario-chang/blob/main/comparative%20patent-analysis.md
 Primary Patent Publication: USPTO US20040133469A1 
 https://www.google.com/url?sa=E&source=gmail&q=https://lens.org/021-070-516-125-054
 
