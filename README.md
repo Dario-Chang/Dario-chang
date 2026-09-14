@@ -345,7 +345,181 @@ This ensures that an agent’s standing gracefully decays over time while mainta
 Because $\text{CycleHits}$ and $\text{HitsHistory}$ operate on pure mathematical primitives rather than opaque neural vectors, the entire execution envelope is 100% deterministic and replayable.
 
 This enables autonomous networks to generate Zero-Knowledge Proofs (ZKPs) of execution safety—proving to enterprise auditors and regulators that an autonomous agent operated strictly within its deterministic policy envelope without revealing proprietary model parameters or sensitive user payloads.
+## Technical Specification: Zero-Knowledge Execution Envelopes (ZK-EE) for Autonomous Agent Compliance
 
+**Document Identifier:** SPEC-ZKEE-2026-V1
+
+**Substrate Primitives:** $\text{CycleHits}$ (Periodic Frequency Bounds) & $\text{HitsHistory}$ (Continuous Exponential Decay)
+
+**Target Standards:** EU AI Act (Art. 14 Human Oversight & Art. 15 Accuracy, Robustness, Cybersecurity), NIST AI RMF 1.0
+
+---
+
+### 1. Executive Summary & Architectural Intent
+
+Black-box foundation models (LLMs, multi-agent orchestrators) generate non-deterministic outputs where safety cannot be guaranteed via model weights alone. Traditional compliance verification requires full disclosure of execution logs, exposing proprietary prompts, model parameters, and sensitive enterprise payloads.
+
+This specification defines the **Zero-Knowledge Execution Envelope (ZK-EE)**. By decoupling stochastic inference from deterministic state control, ZK-EE leverages the physical signal primitives of U.S. Patent App. No. 10/605,894 ($\text{CycleHits}$ and $\text{HitsHistory}$) to generate cryptographic Zero-Knowledge Proofs (ZK-SNARKs/ZK-STARKs). An autonomous agent can mathematically prove to a regulator or auditor that it operated strictly within predefined rate, budget, and safety bounds **without revealing its underlying context, prompt history, or vector embeddings.**
+
+```
++-----------------------------------------------------------------------------------+
+|                           PROVER (Autonomous AI Agent)                            |
+|                                                                                   |
+|  [ Private Inputs ]                                                               |
+|  • System Prompts & Context             [ Deterministic State Physics ]           |
+|  • Payload & Vector Embeddings   ───►   • CycleHits (Frequency Bounds)            |
+|  • Raw API Call Time-Series             • HitsHistory (Exponential Time-Decay)    |
+|                                                       │                           |
++-------------------------------------------------------│---------------------------+
+                                                        │ Arithmetic Circuit Parsing
+                                                        ▼
+                                       +----------------------------------+
+                                       |      ZK CIRCUIT GENERATOR        |
+                                       |   (Groth16 / PlonKy3 Prover)     |
+                                       +----------------------------------+
+                                                        │
+                                                        │ Cryptographic Proof (π)
+                                                        ▼
++-----------------------------------------------------------------------------------+
+|                         VERIFIER (Regulatory / Enterprise Auditor)                 |
+|                                                                                   |
+|  [ Public Inputs ]                                                                |
+|  • Maximum Velocity Threshold (V_max) ───► Verifies π in O(1) Time                |
+|  • Half-Life Decay Rate (λ)                Result: VALID (No Payload Leaked)      |
+|  • Cryptographic State Root (R_t)                                                 |
++-----------------------------------------------------------------------------------+
+
+```
+
+---
+
+### 2. Mathematical Formalization of the Circuit Primitives
+
+To construct an arithmetic circuit over a finite field $\mathbb{F}_p$ for ZK proof generation, continuous dynamic telemetry math must be discretized without losing deterministic fidelity.
+
+#### 2.1 CycleHits Circuit Primitive (Velocity & Loop Breaker)
+
+Let an agent interaction at discrete time $t_k$ be recorded as a step entry. The periodic frequency counter $\text{CycleHits}$ over a sliding window $W$ is defined as the sum of weighted execution events:
+
+$$\text{CycleHits}(t) = \sum_{k=1}^{N} \mathbb{I}(t - t_k \le W) \cdot v_k$$
+
+Where:
+
+* $v_k \in \mathbb{N}$ represents token volume or API call weight.
+* $\mathbb{I}$ is an indicator function evaluated over the window $W$.
+
+**ZK Constraint 1 (Execution Bound):**
+
+For public threshold $V_{\max}$, the prover proves in zero-knowledge that at no point within execution interval $T$ did the accumulated velocity violate the policy threshold:
+
+$$\text{Constraint}_1: \quad \forall t \in T, \quad \text{CycleHits}(t) \le V_{\max}$$
+
+#### 2.2 HitsHistory Circuit Primitive (Continuous Time-Decay Lineage)
+
+To prevent boundary-gaming (bursting calls right at window resets), state standing uses continuous exponential decay. For finite-field arithmetic circuits, continuous decay $e^{-\lambda \Delta t}$ is approximated using fixed-point Taylor expansion or a lookup table (LUT) over discrete time steps $\Delta t = t_k - t_{k-1}$:
+
+$$\text{HitsHistory}(t_k) = \text{HitsHistory}(t_{k-1}) \cdot \gamma^{\Delta t} + S(t_k)$$
+
+Where:
+
+* $\gamma = e^{-\lambda} \pmod p$ is the fixed-point representation of the decay multiplier per time unit.
+* $S(t_k)$ is the score impact of the action at timestamp $t_k$.
+
+**ZK Constraint 2 (Decay Lineage & Cumulative Risk Bound):**
+
+For public maximum allowable risk state $R_{\max}$, the prover demonstrates that historical risk weight naturally decayed while remaining strictly bounded:
+
+$$\text{Constraint}_2: \quad \forall k \in \{1, \dots, N\}, \quad \text{HitsHistory}(t_k) \le R_{\max}$$
+
+---
+
+### 3. ZK-EE Protocol Workflow
+
+#### Step 1: Witness Generation (Off-Chain Local Agent Execution)
+
+During runtime, the agent executes within the local White-Box Execution Envelope. The envelope logs an append-only state trace:$$W = \left\{ (t_1, v_1, S_1), (t_2, v_2, S_2), \dots, (t_N, v_N, S_N) \right\}$$
+
+$$W = \left\{ (t_1, v_1, S_1), (t_2, v_2, S_2), \dots, (t_N, v_N, S_N) \right\}$$
+
+This trace forms the **private witness**. The raw prompts, model outputs, and user IDs are stripped; only timestamps, interaction weights, and state decay values enter the circuit.
+
+#### Step 2: Proof Generation
+
+The prover inputs the private witness $W$ and public parameters $(\gamma, W, V_{\max}, R_{\max}, \text{Root}_{prev})$ into the ZK-Prover (e.g., PlonKy3 or Halo2).
+
+The circuit computes the state transitions:
+
+1. Verifies that step timestamps are strictly monotonically increasing ($t_k > t_{k-1}$).
+2. Calculates $\text{CycleHits}(t_k)$ and asserts $\text{CycleHits}(t_k) \le V_{\max}$.
+3. Calculates $\text{HitsHistory}(t_k)$ using decay factor $\gamma$ and asserts $\text{HitsHistory}(t_k) \le R_{\max}$.
+4. Computes a Poseidon Merkle State Root $R_{\text{final}}$ representing the complete, unalterable interaction history.
+
+The prover outputs a succinct proof $\pi$ and public outputs $(R_{\text{final}}, \text{Pass/Fail})$.
+
+#### Step 3: Verification (Regulatory & Audit Layer)
+
+The verifier (EU AI Act Compliance Engine or Enterprise Security Gateway) receives only:
+
+1. Cryptographic Proof $\pi$
+2. Public Parameters $(V_{\max}, R_{\max}, \gamma)$
+3. Final State Root $R_{\text{final}}$
+
+The verifier executes `Verify(\pi, PublicInputs)`. If `TRUE`, it is mathematically proven that the agent never breached execution rate limits, never ran into an infinite tool-calling loop, and maintained continuous compliance throughout its operational lifecycle—**with zero exposure of proprietary LLM prompts or data.**
+
+---
+
+### 4. Regulatory Mapping Matrix
+
+| EU AI Act / NIST AI RMF Requirement | Failure Mode of Black-Box Systems | ZK-EE White-Box Solution |
+| --- | --- | --- |
+| **EU AI Act Art. 14 (Human Oversight & Throttling)** | Agent loops autonomously, depleting resources or placing runaway API calls. | **$\text{CycleHits}$ ZK-Constraint:** Proves velocity never exceeded safety limits ($V_{\max}$) without exposing underlying tool calls. |
+| **EU AI Act Art. 15 (Cybersecurity & Resilience)** | Malicious prompt injection causes burst attacks or memory degradation. | **$\text{HitsHistory}$ ZK-Constraint:** Proves historical risk decay ($\gamma$) contained cumulative anomaly score below panic thresholds ($R_{\max}$). |
+| **NIST AI RMF 1.0 (Measurable Auditability)** | Audit logs contain PII/IP, making regulatory submission legal-risk prohibited. | **Zero-Knowledge State Root ($R_{\text{final}}$):** Delivers $O(1)$ cryptographic proof of compliance without leaking sensitive payloads. |
+
+---
+
+### 5. Implementation Reference Architecture (Rust Pseudo-Code)
+
+```rust
+// ZK Circuit Definition using Deterministic Temporal Physics
+struct AgentGovernanceCircuit<F: PrimeField> {
+    // Private Witness
+    timestamps: Vec<AllocatedNum<F>>,
+    action_weights: Vec<AllocatedNum<F>>,
+    
+    // Public Parameters
+    max_velocity: AllocatedNum<F>,
+    max_decay_risk: AllocatedNum<F>,
+    decay_factor_gamma: AllocatedNum<F>,
+}
+
+impl<F: PrimeField> Circuit<F> for AgentGovernanceCircuit<F> {
+    fn synthesize<CS: ConstraintSystem<F>>(self, cs: &mut CS) -> Result<(), VerificationError> {
+        let mut current_history = AllocatedNum::alloc_zero(cs)?;
+        
+        for k in 0..self.timestamps.len() {
+            // 1. Enforce Monotonic Time Sequence
+            cs.enforce_greater_than(&self.timestamps[k], &self.timestamps[k-1]);
+            
+            // 2. Evaluate HitsHistory Exponential Decay Primitive
+            // current_history = (current_history * gamma) + action_weight[k]
+            let decayed_state = current_history.mul(cs, &self.decay_factor_gamma)?;
+            current_history = decayed_state.add(cs, &self.action_weights[k])?;
+            
+            // 3. Assert Compliance Bounds (HitsHistory <= R_max)
+            cs.enforce_less_than_or_equal(&current_history, &self.max_decay_risk)?;
+        }
+        Ok(())
+    }
+}
+
+```
+
+---
+
+### 6. Architectural Conclusion
+
+By translating **U.S. Patent App. No. 10/605,894** primitives into zero-knowledge arithmetic circuits, the Zero-Knowledge Execution Envelope resolves the core dilemma of AI regulation: **how to enforce strict, auditable safety bounds on autonomous multi-agent networks without compromising data privacy or proprietary intellectual property.**
 **XI. Closing Statement**
 
 The world is entering the **AI‑2 era**.  
