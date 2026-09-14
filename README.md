@@ -480,7 +480,6 @@ The verifier executes `Verify(\pi, PublicInputs)`. If `TRUE`, it is mathematical
 
 ### 5. Implementation Reference Architecture (Rust Pseudo-Code)
 
-```rust
 // ZK Circuit Definition using Deterministic Temporal Physics
 struct AgentGovernanceCircuit<F: PrimeField> {
     // Private Witness
@@ -496,26 +495,25 @@ struct AgentGovernanceCircuit<F: PrimeField> {
 impl<F: PrimeField> Circuit<F> for AgentGovernanceCircuit<F> {
     fn synthesize<CS: ConstraintSystem<F>>(self, cs: &mut CS) -> Result<(), VerificationError> {
         let mut current_history = AllocatedNum::alloc_zero(cs)?;
-        
+
         for k in 0..self.timestamps.len() {
             // 1. Enforce Monotonic Time Sequence
-            cs.enforce_greater_than(&self.timestamps[k], &self.timestamps[k-1]);
-            
+            if k > 0 {
+                cs.enforce_greater_than(&self.timestamps[k], &self.timestamps[k - 1]);
+            }
+
             // 2. Evaluate HitsHistory Exponential Decay Primitive
             // current_history = (current_history * gamma) + action_weight[k]
             let decayed_state = current_history.mul(cs, &self.decay_factor_gamma)?;
             current_history = decayed_state.add(cs, &self.action_weights[k])?;
-            
+
             // 3. Assert Compliance Bounds (HitsHistory <= R_max)
             cs.enforce_less_than_or_equal(&current_history, &self.max_decay_risk)?;
         }
+
         Ok(())
     }
 }
-
-```
-
----
 
 ### 6. Architectural Conclusion
 
