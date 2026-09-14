@@ -8,6 +8,10 @@
 [![Documentation](https://img.shields.io/badge/Docs-temporalgovernance.org-orange.svg)](https://temporalgovernance.org)
 
 **Dario Chang** &nbsp;|&nbsp; *Originator of the 2003 White-Box Temporal Substrate*
+> 🏛️ **HISTORICAL MILESTONE: DYNAMIC TELEMETRY FIRST-DISCLOSURE**  
+> **U.S. Patent App. No. 10/605,894 (Filed Nov 4, 2003)** is recognized as the first public disclosure of a **White-Box Dynamic Telemetry Architecture**.  
+> 
+> While contemporary 2003 platforms optimized for black-box probabilistic ad-click prediction, this work established the foundational **deterministic signal physics** ($\text{CycleHits}$ rate-limiting and $\text{HitsHistory}$ exponential decay) that today serve as the external governance and safety envelope for hyper-scaler infrastructure and Autonomous AI Agents (AI-2).
 
 ---
 
@@ -268,7 +272,79 @@ This clause expresses openness to future dialogue with academic institutions, st
 - **Lens.org Permanent Record** — Lens ID 021‑070‑516‑125‑054  
 - **Governance Infrastructure** — [https://temporalgovernance.org](https://temporalgovernance.org)  
 
+### Dynamic Telemetry vs. Traditional Monitoring: The Deterministic Foundation of AI Safety
+
+In legacy cloud systems, governance relied on **Traditional Monitoring**—a passive, retrospective model designed to aggregate log files, emit metrics, and trigger human-in-the-loop alerts *after* system state degraded. Passive observability is fundamentally incapable of governing autonomous multi-agent AI ecosystems (AI-2).
+
+Autonomous agents execute non-deterministic actions across real-time APIs at millisecond scales. Safety in these high-velocity environments requires **Dynamic Telemetry**: an active, closed-loop control plane that evaluates temporal signal physics in real time to throttle, route, or sever agent execution *before* catastrophic failure cascades occur.
+
+```
+                  TRADITIONAL PASSIVE MONITORING (Post-Hoc Observability)
+┌────────────────┐     ┌────────────────┐     ┌────────────────┐     ┌────────────────┐
+│ System Event   │ ──► │ Telemetry Log  │ ──► │ Aggregator     │ ──► │ Human Alert    │
+│ (Agent Loop)   │     │ Generation     │     │ Storage        │     │ (Post-Failure) │
+└────────────────┘     └────────────────┘     └────────────────┘     └────────────────┘
+
+                  DYNAMIC TELEMETRY (Deterministic Inline Governance)
+┌────────────────┐     ┌───────────────────────────────────────┐     ┌────────────────┐
+│ Stochastic     │ ──► │ DYNAMIC TELEMETRY ENVELOPE            │ ──► │ Bounded Agent  │
+│ AI Inference   │     │ • CycleHits (Frequency Thresholds)    │     │ Execution or   │
+│ (Probabilistic)│     │ • HitsHistory (Exponential Time-Decay)│     │ Circuit Break  │
+└────────────────┘     └───────────────────────────────────────┘     └────────────────┘
+
+```
+
 ---
+
+### Key Architectural Differences
+
+| Feature | Traditional Passive Monitoring | Dynamic Telemetry Governance |
+| --- | --- | --- |
+| **Operational Paradigm** | Passive post-hoc aggregation (Logs, Metrics, Traces). | Active inline physics envelope (State Throttling, Circuit Breaking). |
+| **Execution Window** | Periodic polling batches (e.g., 10s–60s scrape intervals). | Instantaneous continuous temporal evaluation ($t \rightarrow t+\Delta t$). |
+| **State Tracking** | Static counter tallies and flat sliding-window averages. | Deterministic exponential time-decay logs ($\text{HitsHistory}$). |
+| **Primary Metric** | Resource consumption (CPU, Memory, Latency). | Interaction velocity and behavioral signal physics ($\text{CycleHits}$). |
+| **Target Infrastructure** | Monolithic services & microservices. | Autonomous multi-agent networks & LLM tool execution pipelines. |
+
+---
+
+### Why Deterministic Decay Math is Essential for AI Safety
+
+Probabilistic machine learning models are inherently stochastic; they cannot reliably enforce their own operational boundaries. Placing a black-box guardrail model in front of another black-box AI model simply introduces another layer of probabilistic uncertainty.
+
+True AI safety requires an external **white-box governance substrate** rooted in deterministic temporal physics—specifically the primitives introduced in U.S. Patent App. No. 10/605,894.
+
+#### 1. Preventing Infinite Agent Runaway Loops ($\text{CycleHits}$)
+
+Autonomous agents equipped with recursive tool-calling capabilities risk falling into runaway execution loops. Traditional monitoring detects this only after budget or memory limits are breached.
+
+Dynamic Telemetry evaluates interaction frequency using periodic temporal bounds:
+
+$$\text{CycleHits}(t) = \sum_{k=1}^{N} \delta(t - t_k) \cdot \Phi(t_k)$$
+
+Where $\Phi(t_k)$ maps agent activity within discrete time windows. If an agent's execution frequency exceeds hard physical boundaries within a specific time cycle, the white-box envelope deterministically trips a circuit breaker, severing agent agency instantly.
+
+#### 2. Continuous State Memory & Memory Leaks ($\text{HitsHistory}$)
+
+Traditional sliding-window counters drop historical state off a cliff when a time bucket rolls over, creating "blind spots" where an agent can burst malicious or failing calls right at bucket boundaries.
+
+Dynamic Telemetry applies continuous exponential decay kernels to compute real-time standing without artificial time-window resets:
+
+$$\text{HitsHistory}(t) = \int_{0}^{t} S(\tau) e^{-\lambda (t - \tau)} \, d\tau$$
+
+Where:
+
+* $S(\tau)$ represents the discrete interaction events over time.
+* $\lambda$ represents the half-life decay constant governing how rapidly historical weight decreases.
+* $e^{-\lambda (t - \tau)}$ provides continuous, smooth time decay.
+
+This ensures that an agent’s standing gracefully decays over time while maintaining an unbroken, verifiable lineage of recent activity. Recent anomalous bursts dynamically inflate the state weight, triggering deterministic rate limiting before damage occurs.
+
+#### 3. Zero-Knowledge Cryptographic Lineage & Auditability
+
+Because $\text{CycleHits}$ and $\text{HitsHistory}$ operate on pure mathematical primitives rather than opaque neural vectors, the entire execution envelope is 100% deterministic and replayable.
+
+This enables autonomous networks to generate Zero-Knowledge Proofs (ZKPs) of execution safety—proving to enterprise auditors and regulators that an autonomous agent operated strictly within its deterministic policy envelope without revealing proprietary model parameters or sensitive user payloads.
 
 **XI. Closing Statement**
 
