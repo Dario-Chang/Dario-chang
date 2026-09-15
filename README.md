@@ -21,7 +21,11 @@
 > **Institutional Disclosure**: This repository serves as a historical and technical bridge for the public, journalists, and engineers. Full mathematical formalisms and legal filings are indexed at **[temporalgovernance.org](https://temporalgovernance.org)**.
 
 ---
+🏛️ INDEPENDENT RESEARCH MILESTONE
 
+The world's first EU AI Act compliance architecture built on deterministic temporal physics.
+
+Created entirely outside Big Tech silos—extending a 23-year architectural lineage from the pioneer of Dynamic Behavioral Telemetry (2003) to the governance substrate for Autonomous AI (2026).
 ---
 **TEMPORAL GOVERNANCE ARCHITECTURE — AI‑2 ERA (2003–2026)**  
 ### **Dario Chang — Originator of the 2003 White‑Box Temporal Substrate (US20040133469)**  
