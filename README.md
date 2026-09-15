@@ -634,3 +634,4 @@ Together, these contributions form the **first complete, neutral, physics‑anch
 
 This portfolio establishes the **AI‑2 governance discipline** — the missing layer required for autonomous systems to operate responsibly across global infrastructure.
 
+"From the pioneer of 2003 Dynamic Behavioral Telemetry comes the world's first independent, physics-anchored compliance substrate for the EU AI Act."
