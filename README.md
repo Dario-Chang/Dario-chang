@@ -238,7 +238,7 @@ They do not constitute a legal determination of compliance, nor do they replace 
 
 ---
 
- **VIII. Historical Fee Retainer — Portfolio Review Access**
+ **. Historical Fee Retainer — Portfolio Review Access**
 
 To support continued development despite health limitations, portfolio review requires a **Historical Fee Retainer**, fully creditable toward any future commercial license or option agreement.
 
@@ -261,7 +261,7 @@ temporalgovernance.org
 
 ---
 
-## IX. Governance Standards & FRAND/SEP Dialogue (Non‑Binding)
+## . Governance Standards & FRAND/SEP Dialogue (Non‑Binding)
 
 This statement is non‑binding and does not commit the inventor to FRAND licensing terms, 
 ongoing collaboration, or participation in research, benchmarking, standards development, 
@@ -614,7 +614,10 @@ under NDA. This ensures:
 
 
 
-### 5. Implementation Reference Architecture (Rust Pseudo-Code)
+### 5. Implementation Reference Architecture (Rust Pseudo-Code) 
+// NOTE: Non-binding pseudo-code for illustration only.
+// Does not disclose proprietary substrate implementations or commercial primitives.
+
 
 // ZK Circuit Definition using Deterministic Temporal Physics
 struct AgentGovernanceCircuit<F: PrimeField> {
