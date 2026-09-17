@@ -261,13 +261,39 @@ temporalgovernance.org
 
 ---
 
- *IX. Governance Standards & FRAND/SEP Dialogue (Non‑Binding)
+## IX. Governance Standards & FRAND/SEP Dialogue (Non‑Binding)
 
-This statement is non‑binding and does not commit the inventor to FRAND licensing terms, ongoing collaboration, or participation in research, benchmarking, standards development, or technical work. It also does not restrict the inventor or its corporate entity from entering into exclusive, partial, or full asset assignments, option agreements, or alternative commercial frameworks.
+This statement is non‑binding and does not commit the inventor to FRAND licensing terms, 
+ongoing collaboration, or participation in research, benchmarking, standards development, 
+or technical work. It also does not restrict the inventor or its corporate entity from 
+entering into exclusive, partial, or full asset assignments, option agreements, or 
+alternative commercial frameworks.
 
-All engagement is subject to availability, capacity, and formal intake procedures, including MNDA execution, verified legal‑entity credentialing, and a Historical Fee Retainer. Engagement capacity is limited and prioritized based on strategic relevance.
+### FRAND‑Essential Layer (EU AI Act Compliance)
+The inventor expresses openness to future dialogue regarding the FRAND‑essential temporal 
+physics primitives required for EU AI Act compliance. These primitives include deterministic 
+rate‑governance mechanisms (CycleHits), exponential decay state kernels (HitsHistory), and 
+Zero‑Knowledge audit envelopes. Any FRAND discussion is strictly limited to these compliance 
+primitives and does not extend to advanced substrate implementations.
 
-This clause expresses openness to future dialogue with academic institutions, standards organizations, sovereign AI programs, and enterprise research teams regarding autonomous governance architectures and FRAND/SEP‑aligned primitives, without creating any obligation to provide deliverables or technical output.
+### Commercial Layer (Proprietary Substrate Architecture)
+All advanced substrate components—including multi‑agent temporal governance, silicon‑level 
+telemetry integration, long‑horizon memory stabilization, and autonomous agentic loop control—
+remain fully proprietary and commercially licensed. These components are not part of any FRAND 
+dialogue and are governed exclusively through commercial agreements, joint development 
+frameworks, or sovereign‑AI partnerships.
+
+### Engagement Conditions
+All engagement is subject to availability, capacity, and formal intake procedures, including 
+MNDA execution, verified legal‑entity credentialing, and a Historical Fee Retainer. Engagement 
+capacity is limited and prioritized based on strategic relevance.
+
+### Standards Dialogue (Non‑Obligatory)
+This clause expresses openness to future dialogue with academic institutions, standards 
+organizations, sovereign AI programs, and enterprise research teams regarding autonomous 
+governance architectures and FRAND/SEP‑aligned primitives, without creating any obligation to 
+provide deliverables, technical output, or participation in standards development.
+
 ---
 
  **X. Canonical Records**
