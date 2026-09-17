@@ -474,13 +474,112 @@ The verifier executes `Verify(\pi, PublicInputs)`. If `TRUE`, it is mathematical
 
 ### 4. Regulatory Mapping Matrix
 
+
 | EU AI Act / NIST AI RMF Requirement | Failure Mode of Black-Box Systems | ZK-EE White-Box Solution |
 | --- | --- | --- |
 | **EU AI Act Art. 14 (Human Oversight & Throttling)** | Agent loops autonomously, depleting resources or placing runaway API calls. | **$\text{CycleHits}$ ZK-Constraint:** Proves velocity never exceeded safety limits ($V_{\max}$) without exposing underlying tool calls. |
 | **EU AI Act Art. 15 (Cybersecurity & Resilience)** | Malicious prompt injection causes burst attacks or memory degradation. | **$\text{HitsHistory}$ ZK-Constraint:** Proves historical risk decay ($\gamma$) contained cumulative anomaly score below panic thresholds ($R_{\max}$). |
 | **NIST AI RMF 1.0 (Measurable Auditability)** | Audit logs contain PII/IP, making regulatory submission legal-risk prohibited. | **Zero-Knowledge State Root ($R_{\text{final}}$):** Delivers $O(1)$ cryptographic proof of compliance without leaking sensitive payloads. |
 
+# Frontier AI Substrate — Solving the Temporal Physics Vacuum
+
+Frontier AI labs increasingly acknowledge that model-level scaling cannot resolve
+state drift, catastrophic forgetting, or infinite-loop degradation in advanced
+agentic systems. These failures are symptoms of a missing substrate-level physics
+layer — a vacuum beneath current model architectures.
+
+The Temporal Physics Substrate portfolio (U.S. App. 10/605,894) provides the
+governance primitives required to fill this vacuum. Developed in 2003, these
+dynamic telemetry mechanisms introduce hard physical signal bounds that stabilize
+long-horizon reasoning, continual learning, and durable memory.
+
 ---
+
+## The Substrate Vacuum
+
+Modern AI systems lack:
+
+- deterministic rate control  
+- bounded execution loops  
+- long-term state standing  
+- decay-governed memory  
+- auditable temporal lineage  
+
+Frontier labs now identify these gaps as structural limitations of model-only
+architectures. Scaling weights cannot fix temporal instability.
+
+---
+
+## Temporal Physics Solution
+
+The substrate introduces two foundational primitives:
+
+### CycleHits — Deterministic Rate & Loop Control
+
+CycleHits enforces bounded execution cycles, preventing runaway inference loops,
+token-velocity breaches, and uncontrolled agentic recursion.
+
+### HitsHistory — Exponential Decay State Kernels (\(e^{-\lambda t}\))
+
+HitsHistory governs long-term memory and state standing through decay kernels,
+preventing catastrophic forgetting and stabilizing continual-learning systems.
+
+Together, these primitives provide the temporal physics layer required for
+frontier AI stability.
+
+---
+
+## Dual-Value Architecture
+
+The portfolio is deployed through a two-tier licensing structure:
+
+### 1. FRAND Regulatory Baseline (EU AI Act Alignment)
+
+- execution envelopes  
+- rate-limiting bounds  
+- ZK-auditable compliance logs  
+- safety loop constraints  
+
+This tier is offered under FRAND terms to ensure neutrality and broad adoption
+across EU enterprises (SAP, ASML, Mistral).
+
+### 2. High-Value Compute Substrate (Commercial Licensing)
+
+- long-term memory governance  
+- state-standing decay kernels  
+- multi-agent temporal coherence  
+- hardware-level telemetry integration  
+
+This tier supports commercial licensing, compute-run royalties, and joint
+development agreements with frontier labs and silicon manufacturers.
+
+---
+
+## Strategic Positioning
+
+Recent frontier research on memory decay, continual-learning limits, and
+reasoning-loop instability serves as external validation of the 2003 priority
+claim. These findings confirm the need for a substrate-level physics layer.
+
+The Temporal Physics Substrate provides that layer.
+
+---
+
+## Engagement Pathway
+
+Qualified research organizations, frontier labs, and EU governance bodies may
+request access to the full portfolio under NDA. This ensures:
+
+- responsible evaluation  
+- neutral positioning  
+- structured integration  
+- FRAND compliance  
+- alignment with EU AI Act Articles 9–15  
+
+---
+
+© 2026 TemporalGovernance.org — Temporal Physics Substrate Architecture
+
 
 ### 5. Implementation Reference Architecture (Rust Pseudo-Code)
 
