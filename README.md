@@ -557,29 +557,38 @@ frontier AI stability.
 
 ## Dual-Value Architecture
 
-The portfolio is deployed through a two-tier licensing structure:
+The portfolio is deployed through a two-tier licensing structure that separates
+EU AI Act compliance primitives from the advanced commercial substrate.
 
 ### 1. FRAND Regulatory Baseline (EU AI Act Alignment)
 
+This tier covers only the minimal temporal-physics primitives required for
+deterministic, auditable, and rate-governed execution:
+
 - execution envelopes  
-- rate-limiting bounds  
+- deterministic rate-limiting bounds (CycleHits)  
+- minimal exponential decay kernels for compliance (HitsHistory)  
 - ZK-auditable compliance logs  
 - safety loop constraints  
 
-This tier is offered under FRAND terms to ensure neutrality and broad adoption
-across EU enterprises (SAP, ASML, Mistral).
+These primitives are offered under FRAND terms to ensure neutrality and broad
+adoption across EU enterprises (SAP, ASML, Mistral) and to support alignment
+with Articles 9–15 of the EU AI Act.
 
 ### 2. High-Value Compute Substrate (Commercial Licensing)
 
-- long-term memory governance  
-- state-standing decay kernels  
+All advanced substrate components remain proprietary and commercially licensed.
+These include:
+
+- full long-term memory governance  
+- advanced state-standing decay kernels  
 - multi-agent temporal coherence  
+- autonomous agentic loop stabilization  
 - hardware-level telemetry integration  
+- silicon-level temporal physics coupling  
 
 This tier supports commercial licensing, compute-run royalties, and joint
 development agreements with frontier labs and silicon manufacturers.
-
----
 
 ## Strategic Positioning
 
@@ -589,12 +598,11 @@ claim. These findings confirm the need for a substrate-level physics layer.
 
 The Temporal Physics Substrate provides that layer.
 
----
-
 ## Engagement Pathway
 
 Qualified research organizations, frontier labs, and EU governance bodies may
-request access to the full portfolio under NDA. This ensures:
+request access to the FRAND-essential primitives or the full commercial portfolio
+under NDA. This ensures:
 
 - responsible evaluation  
 - neutral positioning  
@@ -602,9 +610,8 @@ request access to the full portfolio under NDA. This ensures:
 - FRAND compliance  
 - alignment with EU AI Act Articles 9–15  
 
----
-
 © 2026 TemporalGovernance.org — Temporal Physics Substrate Architecture
+
 
 
 ### 5. Implementation Reference Architecture (Rust Pseudo-Code)
@@ -643,8 +650,13 @@ impl<F: PrimeField> Circuit<F> for AgentGovernanceCircuit<F> {
         Ok(())
     }
 }
+// NOTE: This is non-binding pseudo-code for illustrative purposes only.
+// It does not disclose proprietary substrate implementations or commercial primitives.
+// It is not a normative specification and does not imply FRAND or SEP commitment.
+
 
 ### 6. Architectural Conclusion
+
 
 
 An Independent Global Milestone
