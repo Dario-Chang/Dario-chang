@@ -562,53 +562,56 @@ EU AI Act compliance primitives from the advanced commercial substrate.
 
 ### 1. FRAND Regulatory Baseline (EU AI Act Alignment)
 
-This tier covers only the minimal temporal-physics primitives required for
-deterministic, auditable, and rate-governed execution:
+This tier covers only the minimal temporal‑physics primitives required for
+deterministic, auditable, and regulator‑visible execution:
 
 - execution envelopes  
-- deterministic rate-limiting bounds (CycleHits)  
-- minimal exponential decay kernels for compliance (HitsHistory)  
-- ZK-auditable compliance logs  
+- deterministic rate‑limiting bounds (CycleHits)  
+- minimal exponential decay kernel for compliance (HitsHistory‑FRAND)  
+- ZK‑auditable compliance logs  
 - safety loop constraints  
 
-These primitives are offered under FRAND terms to ensure neutrality and broad
-adoption across EU enterprises (SAP, ASML, Mistral) and to support alignment
-with Articles 9–15 of the EU AI Act.
+These primitives represent the regulatory minimum required for EU AI Act
+alignment and do not include any advanced substrate implementations. They are
+offered under FRAND terms to ensure neutrality and broad adoption across EU
+enterprises (SAP, ASML, Mistral) and to support alignment with Articles 9–15 of
+the EU AI Act.
 
-### 2. High-Value Compute Substrate (Commercial Licensing)
+### 2. High‑Value Compute Substrate (Commercial Licensing)
 
 All advanced substrate components remain proprietary and commercially licensed.
 These include:
 
-- full long-term memory governance  
-- advanced state-standing decay kernels  
-- multi-agent temporal coherence  
+- full long‑term memory governance  
+- advanced state‑standing decay kernels (HitsHistory‑Advanced)  
+- multi‑agent temporal coherence  
 - autonomous agentic loop stabilization  
-- hardware-level telemetry integration  
-- silicon-level temporal physics coupling  
+- hardware‑level telemetry integration  
+- silicon‑level temporal physics coupling  
 
-This tier supports commercial licensing, compute-run royalties, and joint
+This tier supports commercial licensing, compute‑run royalties, and joint
 development agreements with frontier labs and silicon manufacturers.
 
 ## Strategic Positioning
 
-Recent frontier research on memory decay, continual-learning limits, and
-reasoning-loop instability serves as external validation of the 2003 priority
-claim. These findings confirm the need for a substrate-level physics layer.
+Recent frontier research on memory decay, continual‑learning limits, and
+reasoning‑loop instability serves as external validation of the 2003 priority
+claim. These findings confirm the need for a substrate‑level physics layer.
 
 The Temporal Physics Substrate provides that layer.
 
 ## Engagement Pathway
 
 Qualified research organizations, frontier labs, and EU governance bodies may
-request access to the FRAND-essential primitives or the full commercial portfolio
+request access to the FRAND‑essential primitives or the full commercial portfolio
 under NDA. This ensures:
 
 - responsible evaluation  
 - neutral positioning  
 - structured integration  
 - FRAND compliance  
-- alignment with EU AI Act Articles 9–15  
+- alignment with EU AI Act Articles 9–15
+
 
 © 2026 TemporalGovernance.org — Temporal Physics Substrate Architecture
 
