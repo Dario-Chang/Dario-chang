@@ -36,7 +36,35 @@ and
 **U.S. Citizen — Cuba 1995 → Miami 2003 → Coral Gables 817 Lorca St — Miami-Dade File 2005 R 775158 — Public Record Verifiable**
 
 **Canonical Identifiers:** USPTO US20040133469A1 | Lens.org 021-070-516-125-054 | Miami-Dade Clerk 2005 R 775158 Book 23608/Page 2490 | TemporalGovernance.org
+Hyperscaler Architecture Gap: Deterministic Temporal Governance
 
+Modern hyperscaler AI stacks excel at large‑scale probabilistic inference, distributed training, and high‑availability deployment. These capabilities, however, do not inherently provide the deterministic temporal‑governance functions required for accountable autonomy.
+
+Probabilistic inference produces predictions and actions under uncertainty.
+Temporal governance produces measurable behavior, replayable histories, identity binding, governed resets, and audit‑ready provenance.
+These functions are distinct and cannot be inferred from model outputs alone.
+
+Most hyperscaler architectures publicly document inference pipelines, orchestration layers, and safety filters, but do not document a deterministic temporal substrate that:
+
+records governed state transitions across time
+
+maintains append‑only behavioral histories
+
+binds identity to conduct
+
+enforces rotation fairness
+
+provides reversible, auditable lifecycle updates
+
+produces verifiable execution evidence
+
+Temporal governance physics supplies these missing functions.
+It operates around probabilistic models without requiring access to model internals, and without requiring the models themselves to become deterministic.
+
+The 2003–2026 temporal‑governance lineage provides a documented foundation for these primitives.
+Its applicability to hyperscaler systems depends on implementation evidence and the scope of the relevant patent claims, but the architectural gap is clear: inference alone does not produce temporal accountability.
+
+Temporal governance offers interoperable infrastructure that can anchor autonomous systems to measurable behavior, verifiable histories, and regulator‑grade auditability — capabilities not natively provided by probabilistic inference stacks.
 ---
 
 ## Executive Summary: The Dual Foundations of Web Infrastructure (2003–2026)
